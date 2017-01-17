@@ -1,6 +1,9 @@
 "use strict";
 $(document).ready(function() {
 
+    //var images = ['bg-0.jpg', 'bg-1.png', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg'];
+    //html').css({'background-image': 'url(../img/' + images[Math.floor(Math.random() * images.length)] + ')'});
+
     var getInput = function(ipt) {
         return ipt.children("input").val();
     };

@@ -1,3 +1,4 @@
-# masterzac32.net
+# masterzach32.net
 
-Website redesign
+Website redesign in html, js and css
+working on moving away from wordpress
