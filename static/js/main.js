@@ -223,21 +223,37 @@ $(document).ready(function() {
     var bg = $('#bg-container');
 
     var backgrounds = new Array(
-      'url("static/img/bg-0.jpg")',
-      'url("static/img/bg-1.png")',
-      'url("static/img/bg-2.jpg")',
-      'url("static/img/bg-3.jpg")',
-      'url("static/img/bg-4.jpg")'
+      'bg-0.jpg',
+      'bg-2.jpg',
+      'bg-3.jpg',
+      'bg-4.jpg'
     );
 
     var current = 0;
 
-    function nextBackground() {
+    var transition = function() {
+        bg.css('background-image', 'url("static/img/' + backgrounds[current] + '")');
+        current++;
+        current = current % backgrounds.length;
+    };
+
+    var run = function() {
+        transition();
+        bg.fadeIn('slow', function() {
+            setTimeout(function() {
+                bg.fadeOut('slow', run);
+            }, 8000);
+        });
+    }
+
+    run();
+
+    /*function nextBackground() {
       current++;
       current = current % backgrounds.length;
-      bg.css('background-image', backgrounds[current]);
+      bg.css('background-image', 'url("static/img/' + backgrounds[current] + '")');
     }
     setInterval(nextBackground, 5000);
 
-    bg.css('background-image', backgrounds[0]);
+    bg.css('background-image', backgrounds[0]);*/
 });
