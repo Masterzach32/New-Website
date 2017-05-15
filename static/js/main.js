@@ -182,8 +182,9 @@ $(document).ready(function() {
     };
 
     var allBoxes = $(".mb");
-    var repoBox = $("#mb-repo");
+    var aboutBox = $("#mb-about");
     var orgBox = $("#mb-org");
+    var projBox = $("#mb-proj");
     var conBox = $("#mb-con");
     var repoSearch = $("#repo-searchbox");
     var searchLabel;
@@ -208,10 +209,10 @@ $(document).ready(function() {
             if (e.keyCode === 27)
                 hideBox();
         });
-        $("#action-proj").click(repoBox.showBox = showBoxFunc(repoBox));
+        $("#action-about").click(aboutBox.showBox = showBoxFunc(aboutBox));
         $("#action-org").click(orgBox.showBox = showBoxFunc(orgBox));
+        $("#action-proj").click(projBox.showBox = showBoxFunc(projBox));
         $("#action-con").click(conBox.showBox = showBoxFunc(conBox));
-        repoSearch.on("input", repoSearchUpdate);
     };
 
     initInputBoxes();
@@ -219,4 +220,24 @@ $(document).ready(function() {
     loadGithubData();
     hideLoader();
 
+    var bg = $('#bg-container');
+
+    var backgrounds = new Array(
+      'url("static/img/bg-0.jpg")',
+      'url("static/img/bg-1.png")',
+      'url("static/img/bg-2.jpg")',
+      'url("static/img/bg-3.jpg")',
+      'url("static/img/bg-4.jpg")'
+    );
+
+    var current = 0;
+
+    function nextBackground() {
+      current++;
+      current = current % backgrounds.length;
+      bg.css('background-image', backgrounds[current]);
+    }
+    setInterval(nextBackground, 5000);
+
+    bg.css('background-image', backgrounds[0]);
 });
