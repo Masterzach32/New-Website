@@ -32,6 +32,14 @@ p {
     font-weight: 400;
 }
 
+.url-link {
+    transition: color 0.4s;
+}
+
+.url-link:hover {
+    color: #90CAF9;
+}
+
 .abs-center {
     position: absolute;
     top: 50%; left: 50%;
@@ -257,7 +265,14 @@ p {
 }
 
 #bg-container {
-    background-image: url("../img/bg-2.jpg");
+    background-image: url("../img/bg-0.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+#bg-404 {
+    background-image: url("../img/bg-0.jpg");
     background-position: center;
     background-size: cover;
     opacity: 0.8;
@@ -533,4 +548,14 @@ p {
 
 .con-name > h2 {
     bottom: 0; left: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

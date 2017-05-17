@@ -246,14 +246,5 @@ $(document).ready(function() {
         });
     }
 
-    run();
-
-    /*function nextBackground() {
-      current++;
-      current = current % backgrounds.length;
-      bg.css('background-image', 'url("static/img/' + backgrounds[current] + '")');
-    }
-    setInterval(nextBackground, 5000);
-
-    bg.css('background-image', backgrounds[0]);*/
+    transition();
 });

@@ -1,0 +1,7 @@
+# 404 page
+ErrorDocument 404 http://masterzach32.net/404.html
+
+# redirects
+Redirect /mods/ http://masterzach32.net/
+Redirect /mods/pineapple-mod/ http://masterzach32.net/
+Redirect /projects/swagbot/ http://masterzach32.net/
