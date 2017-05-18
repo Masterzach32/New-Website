@@ -308,7 +308,7 @@ p {
 }
 
 #nav-content > div {
-    transition: color 0.8s;
+    transition: color 0.4s;
     cursor: pointer;
 }
 
