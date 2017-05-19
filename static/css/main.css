@@ -23,12 +23,12 @@ h1 {
 }
 
 h2 {
-    font-size: 22pt;
+    font-size: 20pt;
     font-weight: 700;
 }
 
 h3 {
-    display:inline;
+    display: inline;
 }
 
 p {
@@ -378,7 +378,7 @@ p {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     height: auto;
-    max-height: 500px;
+    max-height: 550px;
     overflow-y: auto;
 }
 
@@ -388,7 +388,7 @@ p {
     border-bottom: solid 1px #AAAAAA;
 }
 
-.con {
+.contact-box {
     height: 128px;
     margin-bottom: 6px;
     padding: 8px;
@@ -398,49 +398,49 @@ p {
     box-shadow: 0 2px 16px -6px #000000;
 }
 
-.con:not(:last-child) {
+.contact-box:not(:last-child) {
     margin-bottom: 12px;
 }
 
-.con-img {
+.contact-img {
     margin-right: 8px;
     padding: 8px;
     flex: 0 0 104px;
 }
 
-.con-img > img {
+.contact-img > img {
     width: 88px; height: 88px;
     background-color: #DEDEDE;
     border-radius: 50%;
 }
 
-.con-details {
+.contact-details {
     display: flex;
     flex-flow: column;
     flex: 1 0;
 }
 
-.con-details > div {
+.contact-details > div {
     position: relative;
     flex: 1;
 }
 
-.con-details > div > a, .con-details > div > h2 {
+.contact-details > div > a, .contact-details > div > h2 {
     position: absolute;
 }
 
-.con-link > a {
+.contact-link > a {
     top: 0; left: 0;
     text-decoration: none;
     color: #000000;
     transition: color 0.6s;
 }
 
-.con-link > a:hover {
+.contact-link > a:hover {
     color: #2196F3;
 }
 
-.con-name > h2 {
+.contact-name > h2 {
     bottom: 0; left: 0;
 }
 

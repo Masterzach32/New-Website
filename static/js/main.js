@@ -1,121 +1,6 @@
 "use strict";
 $(document).ready(function() {
 
-    var getInput = function(ipt) {
-        return ipt.children("input").val();
-    };
-
-    var initInputBoxes = function() {
-        $(".input-text").each(function(i, e) {
-            var o = $(e);
-            o.append($("<input>", {type: "text", required: "", spellcheck: "false"}));
-            o.append($("<label>").text(o.attr("data-name")));
-            o.append($("<span>"));
-        });
-    };
-
-    var repoList = $("#repo-list");
-    var orgList = $("#org-list");
-
-    var appendRepo = function(repo) {
-        repoList.append(
-            $("<div>", {"class": "repo"}).append(
-                $("<div>", {"class": "repo-title"}).append(
-                    $("<div>", {"class": "repo-name"}).append(
-                        $("<a>", {target: "__BLANK", href: repo.html_url}).append(
-                            $("<h2>").text(repo.name)
-                        )
-                    )
-                ).append(
-                    $("<div>", {"class": "repo-stars"}).append(
-                        $("<i>", {"class": "mdi mdi-star"})
-                    ).append(
-                        $("<span>").text(repo.stargazers_count)
-                    )
-                )
-            ).append(
-                $("<p>", {"class": "repo-desc"}).text(repo.description || "No description...")
-            ).attr("data-name", repo.name).attr("data-desc", repo.description)
-        );
-    };
-
-    var appendOrg = function(org) {
-        orgList.append(
-            $("<div>", {"class": "org"}).append(
-                $("<div>", {"class": "org-img"}).append(
-                    $("<img>", {src: org.avatar_url})
-                )
-            ).append(
-                $("<div>", {"class": "org-details"}).append(
-                    $("<div>", {"class": "org-name"}).append(
-                        $("<a>", {target: "__BLANK", href: "https://github.com/" + org.login}).append(
-                            $("<h2>").text(org.login)
-                        )
-                    )
-                ).append(
-                    $("<div>", {"class": "org-desc"}).append(
-                        $("<p>").text(org.description || "No description...")
-                    )
-                )
-            )
-        );
-    };
-
-    var repoUrl = "http://api.github.com/users/masterzach32/repos?sort=updated&per_page=100&page=";
-
-    var getRepos = function(pageNum, cb, prev) {
-        var repos = prev || [];
-        $.getJSON(repoUrl + pageNum, function(dto) {
-            repos = repos.concat(dto);
-            if (dto.length < 100)
-                cb(repos);
-            else
-                getRepos(pageNum + 1, cb, repos);
-        });
-    };
-
-    var loadGithubData = function() {
-        getRepos(1, function(dto) {
-            $.each(dto, function(i, repo) {
-                appendRepo(repo);
-            });
-        });
-        $.getJSON("https://api.github.com/users/masterzach32/orgs", function(dto) {
-            $.each(dto, function(i, org) {
-                appendOrg(org);
-            });
-        });
-    };
-
-    var repoSearchUpdate = function() {
-        var s = getInput(repoSearch);
-        if (!s) {
-            repoList.children().removeClass("hidden");
-            searchLabel.text("Search");
-            repoSearch.removeClass("invalid");
-        } else {
-            var p;
-            try {
-                p = new RegExp(s, "i");
-            } catch (e) {
-                searchLabel.text("Search (Invalid Regex!)");
-                repoSearch.addClass("invalid");
-                return;
-            }
-            searchLabel.text("Search");
-            repoSearch.removeClass("invalid");
-            repoList.children().each(function (i, e) {
-                var o = $(e);
-                if ((!!o.attr("data-name") && p.test(o.attr("data-name"))) ||
-                    (!!o.attr("data-desc") && p.test(o.attr("data-desc")))) {
-                    o.removeClass("hidden");
-                } else {
-                    o.addClass("hidden");
-                }
-            });
-        }
-    };
-
     var onLoaderHidden = function() {
         $("#title").addClass("shift");
         $("#nav").addClass("visible");
@@ -144,7 +29,7 @@ $(document).ready(function() {
                     break;
                 case "contact":
                 case "contactme":
-                    conBox.showBox();
+                    contactBox.showBox();
                     break;
             }
         }
@@ -175,7 +60,7 @@ $(document).ready(function() {
     var aboutBox = $("#mb-about");
     var orgBox = $("#mb-org");
     var projBox = $("#mb-proj");
-    var conBox = $("#mb-con");
+    var contactBox = $("#mb-contact");
     var repoSearch = $("#repo-searchbox");
     var searchLabel;
 
@@ -202,12 +87,10 @@ $(document).ready(function() {
         $("#action-about").click(aboutBox.showBox = showBoxFunc(aboutBox));
         $("#action-org").click(orgBox.showBox = showBoxFunc(orgBox));
         $("#action-proj").click(projBox.showBox = showBoxFunc(projBox));
-        $("#action-con").click(conBox.showBox = showBoxFunc(conBox));
+        $("#action-con").click(contactBox.showBox = showBoxFunc(contactBox));
     };
 
-    initInputBoxes();
     initActionButtons();
-    loadGithubData();
     hideLoader();
 
     var bg = $('#bg-container');
