@@ -1,9 +1,6 @@
 "use strict";
 $(document).ready(function() {
 
-    //var images = ['bg-0.jpg', 'bg-1.png', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg'];
-    //html').css({'background-image': 'url(../img/' + images[Math.floor(Math.random() * images.length)] + ')'});
-
     var getInput = function(ipt) {
         return ipt.children("input").val();
     };
@@ -132,26 +129,19 @@ $(document).ready(function() {
             loader.css("display", "none");
             $("#page-content").addClass("visible");
             window.setTimeout(onLoaderHidden, 1600);
-        }, 2100);
+        }, 1500);
         if (!!document.location.hash) {
             switch (document.location.hash.substring(1).toLowerCase()) {
-                case "repos":
-                case "repo":
-                case "repositories":
-                case "repository":
-                case "projs":
-                case "proj":
-                case "projects":
-                case "project":
-                    repoBox.showBox();
+                case "about":
+                case "aboutme":
+                    aboutBox.showBox();
                     break;
-                case "orgs":
-                case "org":
-                case "organizations":
-                case "organization":
+                case "experience":
                     orgBox.showBox();
                     break;
-                case "con":
+                case "projects":
+                    projBox.showBox();
+                    break;
                 case "contact":
                 case "contactme":
                     conBox.showBox();

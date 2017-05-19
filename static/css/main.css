@@ -17,7 +17,7 @@ a {
 h1 {
     line-height: 167px;
     color: #FFFFFF;
-    font-size: 75pt;
+    font-size: 70pt;
     font-family: "Allura", cursive;
     font-weight: 900;
 }
@@ -36,11 +36,11 @@ p {
     font-weight: 400;
 }
 
-.url-link {
+.link-hover {
     transition: color 0.4s;
 }
 
-.url-link:hover {
+.link-hover:hover {
     color: #90CAF9;
 }
 
@@ -386,119 +386,6 @@ p {
     margin: 4px 0;
     border: none;
     border-bottom: solid 1px #AAAAAA;
-}
-
-#repo-list {
-    max-height: 50vh;
-    margin-top: 12px;
-}
-
-.repo {
-    margin-left: 4px;
-    margin-bottom: 6px;
-    padding: 12px 14px;
-    padding-top: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 16px -6px #000000;
-}
-
-.repo.hidden {
-    display: none;
-}
-
-.repo:first-child {
-    margin-top: 6px;
-}
-
-.repo:not(:last-child) {
-    margin-bottom: 12px;
-}
-
-.repo-title {
-    height: 36px;
-    margin-bottom: 6px;
-    position: relative;
-}
-
-.repo-name, .repo-stars {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.repo-name {
-    left: 0;
-}
-
-.repo-name > a {
-    text-decoration: none;
-    color: #000000;
-    transition: color 0.6s;
-}
-
-.repo-name > a:hover {
-    color: #2196F3;
-}
-
-.repo-stars {
-    right: 0;
-    font-size: 18pt;
-}
-
-.org {
-    height: 128px;
-    margin-bottom: 6px;
-    padding: 8px;
-    display: flex;
-    flex-flow: row;
-    border-radius: 4px;
-    box-shadow: 0 2px 16px -6px #000000;
-}
-
-.org:not(:last-child) {
-    margin-bottom: 12px;
-}
-
-.org-img {
-    margin-right: 8px;
-    padding: 8px;
-    flex: 0 0 104px;
-}
-
-.org-img > img {
-    width: 88px; height: 88px;
-    background-color: #DEDEDE;
-    border-radius: 50%;
-}
-
-.org-details {
-    display: flex;
-    flex-flow: column;
-    flex: 1 0;
-}
-
-.org-details > div {
-    position: relative;
-    flex: 1;
-}
-
-.org-details > div > a, .org-details > div > p {
-    position: absolute;
-}
-
-.org-name > a {
-    bottom: 0; left: 0;
-    text-decoration: none;
-    color: #000000;
-    transition: color 0.6s;
-}
-
-.org-name > a:hover {
-    color: #2196F3;
-}
-
-.org-desc > p {
-    top: 0; left: 0;
 }
 
 .con {
