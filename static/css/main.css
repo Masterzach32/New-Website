@@ -74,15 +74,15 @@ p {
 }
 
 .scroll::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 
 .scroll::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
     border-radius: 6px;
 }
 
@@ -148,58 +148,6 @@ p {
     50%  { stroke: #F7C223; }
     75%  { stroke: #1B9A59; }
     100% { stroke: #4285F4; }
-}
-
-.input-text {
-    height: 28px;
-    margin-top: 10px;
-    position: relative;
-}
-
-.input-text > label {
-    position: absolute;
-    top: 0; left: 0;
-    height: 24px;
-    font-size: 24px;
-    line-height: 24px;
-    color: rgba(0, 0, 0, 0.6);
-    transition: top 0.6s, font-size 0.6s;
-    pointer-events: none;
-}
-
-.input-text.invalid > label {
-    color: rgba(255, 0, 0, 0.6);
-}
-
-.input-text > input[type="text"]:focus + label,
-.input-text > input[type="text"]:valid + label {
-    top: -20px;
-    font-size: 10px;
-}
-
-.input-text > input[type="text"] {
-    width: 100%; height: 24px;
-    position: absolute;
-    padding-bottom: 3px;
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: solid 1px #AAAAAA;
-    font-size: 24px;
-    font-family: "Montserrat", "Roboto", "Cambria", sans-serif;
-    box-sizing: content-box;
-}
-
-.input-text > span {
-    width: 0;
-    position: absolute;
-    bottom: 0;
-    border-bottom: solid 2px #2196F3;
-    transition: width 0.6s;
-}
-
-.input-text > input[type="text"]:focus ~ span {
-    width: 100%;
 }
 
 #loader, #wrapper {
@@ -378,7 +326,7 @@ p {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     height: auto;
-    max-height: 550px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
